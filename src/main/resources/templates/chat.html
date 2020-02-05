@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Identification</title>
+	</head>
+	<body>
+		<div class="chat" th:id="${chat.id}">
+			<div class="message-history">
+				<div th:class="${'message ' + (message.sender == 'BOT' ? 'bot' : 'user')}" th:each="message : ${chat.messages}">
+					<div th:text="${message.message}"></div>
+					<div th:text="${#dates.format(message.sentAt, 'yyyy/MM/dd hh:mm:ss' )}" class="date"></div>
+				</div>
+			</div>
+			<div class="input-area">
+				<div class="container">
+					<div class="row clearfix input-button">
+						<input class="form-control" id="message">
+						<div class="pull-right">
+							<button class="btn btn-primary">Send</button>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

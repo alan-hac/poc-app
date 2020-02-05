@@ -1,0 +1,49 @@
+.chat{
+	height: 100%;
+}
+
+.message-history {
+	height: calc(100% - 50px);
+}
+
+.message {
+	box-shadow: 0 1px 5px #dadada;
+	border: solid 0.1em;
+	border-radius: 1em;
+	max-width: 70%;
+	padding: 1em;
+}
+
+
+.message.bot {
+	border-color: blue;
+	background-color: lightblue;
+	text-align: left;
+}
+
+.message.user {
+	border-color: green;
+	background-color: lightgreen;
+	text-align: right;
+}
+
+.message .date {
+	text-align: right;
+	font-size: 0.8em;
+}
+
+.input-area {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	height: 50px;
+	box-shadow: 0 1px 5px #dadada;
+	padding: 10px 10px 20px;
+	z-index: 1;
+}
+
+.input-button {
+	flex-wrap: nowrap;
+}
+
