@@ -2,8 +2,8 @@ package br.com.falconer.dto;
 
 import java.util.Date;
 
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Message {
 	private String sender;
-	private String message;
-	@DateTimeFormat(iso = ISO.DATE_TIME)
+	private String content;
+	@JsonFormat(shape = Shape.STRING, pattern = "dd/MM/YYYY HH:mm:ss")
 	private Date sentAt;
 }
